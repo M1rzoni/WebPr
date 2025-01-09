@@ -1,0 +1,29 @@
+<div class="contact-container">
+  <h2>Kontaktirajte nas</h2>
+  <form class="contact-form">
+    <input
+      type="text"
+      placeholder="Ime"
+      [(ngModel)]="form.name"
+      class="form-input"
+    />
+    <input
+      type="text"
+      placeholder="Prezime"
+      [(ngModel)]="form.lastname"
+      class="form-input"
+    />
+    <input
+      type="email"
+      placeholder="Email"
+      [(ngModel)]="form.email"
+      class="form-input"
+    />
+    <textarea
+      placeholder="Poruka"
+      [(ngModel)]="form.message"
+      class="form-textarea"
+    ></textarea>
+    <button class="form-button" (click)="send()">Pošalji</button>
+  </form>
+</div>

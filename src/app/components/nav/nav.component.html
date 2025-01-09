@@ -1,0 +1,60 @@
+<nav class="navbar">
+  <div class="nav-content">
+    <a class="logo">News</a>
+
+    <div class="hamburger-menu" (click)="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <ul class="nav-links" [ngClass]="{ active: menuOpen }">
+      <li>
+        <a routerLink="/pocetna" routerLinkActive="active" (click)="closeMenu()"
+          >Početna</a
+        >
+      </li>
+      <li>
+        <a routerLink="/onama" routerLinkActive="active" (click)="closeMenu()"
+          >Evropa</a
+        >
+      </li>
+      <li>
+        <a routerLink="/usluge" routerLinkActive="active" (click)="closeMenu()"
+          >Regija</a
+        >
+      </li>
+      <li>
+        <a routerLink="/kontakt" routerLinkActive="active" (click)="closeMenu()"
+          >Kontakt</a
+        >
+      </li>
+    </ul>
+
+    <button class="nav-button" (click)="togglePopup()">Prijavi se</button>
+  </div>
+</nav>
+
+<div class="popup-overlay" *ngIf="isPopupOpen">
+  <div class="popup">
+    <h3>Prijavi se</h3>
+    <form>
+      <input
+        type="email"
+        placeholder="Email"
+        [(ngModel)]="loginData.email"
+        class="popup-input"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="loginData.password"
+        class="popup-input"
+      />
+      <button type="button" (click)="login()" class="popup-button">
+        Prijavi se
+      </button>
+    </form>
+    <button class="popup-close" (click)="togglePopup()">×</button>
+  </div>
+</div>
